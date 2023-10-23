@@ -1,0 +1,81 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title for the page -->
+    <title>Timetable</title>
+
+    <!-- Favicon for the page -->
+    <link rel="icon" href="profilePicIcon.png" type="image/x-icon">
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: backgroundShift 8s infinite alternate;
+            background-color: red;
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% {
+                background-color: red;
+            }
+            50% {
+                background-color: green;
+            }
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: scaleRotate 6s infinite alternate;
+        }
+
+        .circle:nth-child(1) {
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            margin-top: -150px; 
+            margin-left: -150px;
+            background-color: green;
+        }
+
+        .circle:nth-child(2) {
+            top: 50%;
+            left: 50%;
+            width: 600px;
+            height: 600px;
+            margin-top: -300px; 
+            margin-left: -300px;
+            background-color: red;
+            animation-delay: 1s;
+        }
+
+        #myImage {
+            z-index: 1; /* Ensure image is on top of the animated circles */
+            width: 100%; /* Adjust as per your requirement */
+        }
+
+        @keyframes scaleRotate {
+            0% {
+                transform: scale(0.8) rotate(0deg);
+            }
+            100% {
+                transform: scale(1.2) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <img id="myImage" src="file:///C:/Users/Tim/Documents/College/timetableImage.jpg" alt="My Image">
+</body>
+</html>
